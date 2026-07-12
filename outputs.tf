@@ -1,3 +1,7 @@
+output "network_security_perimeter_access_rules_id" {
+  description = "Map of id values across all network_security_perimeter_access_rules, keyed the same as var.network_security_perimeter_access_rules"
+  value       = { for k, v in azurerm_network_security_perimeter_access_rule.network_security_perimeter_access_rules : k => v.id }
+}
 output "network_security_perimeter_access_rules_address_prefixes" {
   description = "Map of address_prefixes values across all network_security_perimeter_access_rules, keyed the same as var.network_security_perimeter_access_rules"
   value       = { for k, v in azurerm_network_security_perimeter_access_rule.network_security_perimeter_access_rules : k => v.address_prefixes }
